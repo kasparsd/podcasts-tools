@@ -20,7 +20,7 @@ class ComposerScripts {
 			];
 
 			if ( ! empty( $feed['storeId'] ) ) {
-				$item['url'] = self::podcastIdToUrl( $feed['storeId'] );
+				$item['htmlUrl'] = self::podcastIdToUrl( $feed['storeId'] );
 			}
 
 			$opml->addItem( $item );
