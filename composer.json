@@ -4,7 +4,8 @@
   "authors": [
     {
       "name": "Kaspars Dambis",
-      "email": "hi@kaspars.net"
+      "email": "hi@kaspars.net",
+      "homepage": "https://kaspars.net"
     }
   ],
   "license": "MIT",
