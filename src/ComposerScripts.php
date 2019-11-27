@@ -9,31 +9,9 @@ class ComposerScripts {
 	const PODCAST_PLIST_PATH = 'Library/Containers/com.apple.podcasts/Data/Documents/PodcastsDB.plist';
 
 	public static function toOpml( Event $event ) {
-		$parser = new Parser( self::defaultPlist() );
-		$opml = new OpmlWriter();
+		$tools = new Tools( self::defaultPlist() );
 
-		foreach ( $parser->subscriptions() as $feed ) {
-			$item = [
-				'type' => 'rss',
-				'title' => $feed['title'],
-				'feedUrl' => $feed['feedUrl'],
-			];
-
-			if ( ! empty( $feed['storeId'] ) ) {
-				$item['htmlUrl'] = self::podcastIdToUrl( $feed['storeId'] );
-			}
-
-			$opml->addItem( $item );
-		}
-
-		echo $opml->render();
-	}
-
-	public static function podcastIdToUrl( $id ) {
-		return sprintf(
-			'https://podcasts.apple.com/us/podcast/id%d',
-			$id
-		);
+		echo $tools->toOpml();
 	}
 
 	public static function defaultPlist() {
