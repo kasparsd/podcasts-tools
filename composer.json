@@ -1,0 +1,20 @@
+{
+  "name": "kasparsd/podcasts-tools",
+  "description": "Tools for working with Apple Podcasts subscriptions",
+  "authors": [
+    {
+      "name": "Kaspars Dambis",
+      "email": "hi@kaspars.net"
+    }
+  ],
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Kasparsd\\ApplePodcastsTools\\": "src/"
+    }
+  },
+  "require": {},
+  "scripts": {
+    "export": "Kasparsd\\ApplePodcastsTools\\ComposerScripts::toOpml"
+  }
+}
